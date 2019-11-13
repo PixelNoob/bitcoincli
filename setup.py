@@ -1,19 +1,29 @@
 #!/usr/bin/env python
+import os
+from setuptools import setup, find_packages
 
-from distutils.core import setup
 
-setup(
-    name='python-bitcoinrpc',
-    version='1.0',
-    description='Enhanced version of python-jsonrpc for use with Bitcoin',
-    long_description=open('README.rst').read(),
-    author='Jeff Garzik',
-    author_email='<jgarzik@pobox.com>',
-    maintainer='Jeff Garzik',
-    maintainer_email='<jgarzik@pobox.com>',
-    url='http://www.github.com/jgarzik/python-bitcoinrpc',
-    packages=['bitcoinrpc'],
-    classifiers=[
-        'License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)', 'Operating System :: OS Independent'
-    ]
-)
+# Utility function to read the README file.
+# Used for the long_description.  It's nice, because now 1) we have a top level
+# README file and 2) it's easier to type in the README file than to put a raw
+# string in below ...
+def read(fname):
+    return open(os.path.join(os.path.dirname(__file__), fname)).read()
+
+
+setup(name='bitcoincli',
+      version='1.0.0',
+      description='A python binding for Bitcoin Json-RPC API',
+      long_description=read('README.md'),
+      license="BSD",
+      author='Evgeny Konstantinov, Alex Khaerov, Federico Cardoso',
+      author_email='evgeny.konstantinov@chainstack.com,'
+                   'alex.khaerov@chainstack.com,'
+                   'federico.cardoso@dxmarkets.com',
+      url='https://github.com/chainstack/bitcoincli',
+      keywords='bitcoin python blockchain jsonrpc',
+      packages=find_packages(),
+      install_requires=[
+          'requests>=2.20.0',
+      ],
+      )
