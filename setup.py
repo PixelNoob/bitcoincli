@@ -15,6 +15,7 @@ setup(name='bitcoincli',
       version='1.0.0',
       description='A python binding for Bitcoin Json-RPC API',
       long_description=read('README.md'),
+      long_description_content_type='text/markdown',
       license="BSD",
       author='Evgeny Konstantinov, Alex Khaerov, Federico Cardoso',
       author_email='evgeny.konstantinov@chainstack.com,'

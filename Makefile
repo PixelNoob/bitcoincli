@@ -11,10 +11,12 @@ clean:
 	rm -rf dist/*
 
 dev:
+	pip install twine
 	pip install -e .
 
 package:
-	python setup.py sdist bdist_wheel upload
+	python setup.py sdist
+	python setup.py bdist_wheel
 
 test:
 	coverage run -m unittest discover
