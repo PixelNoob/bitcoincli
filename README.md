@@ -27,8 +27,8 @@ Remember to replace the RPC variables with your Bitcoin node access credentials.
 ```python
 from bitcoincli import Bitcoin
 
-host = "nd-123-456-789.p2pify.com"
-port = "80"
+host = "127.0.0.1"
+port = "8332"
 username = "user-name"
 password = "pass-word-pass-word-pass-word"
 
